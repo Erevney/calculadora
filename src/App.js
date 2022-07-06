@@ -3,7 +3,7 @@ import {useState} from 'react';
 function App() {
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
-  
+
   const ops = ['/','*','+','-','.'];
 
   const updateCalc = value => {
@@ -34,7 +34,7 @@ function App() {
     setCalc(eval(calc).toString());
   }
   
-  const borrar = () => {
+  const del = () => {
     if(calc ==''){
       return;
     }
@@ -54,7 +54,7 @@ function App() {
         <button onClick={() => updateCalc('*')}>*</button>
         <button onClick={() => updateCalc('+')}>+</button>
         <button onClick={() => updateCalc('-')}>-</button>
-        <button onClick={borrar}>DEL</button>
+        <button onClick={del}>DEL</button>
       </div>
       <div className="digits">
         { createDigits() }
@@ -66,5 +66,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
